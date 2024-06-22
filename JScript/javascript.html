@@ -7,18 +7,63 @@
     
 </head>
 <body>
+    <div id="shapeDiv">
+        
+
+    </div>
     
     
     
     <script type="text/JavaScript">
-        var myArray = new Array();
-        myArray[0] = "Pizza";
-        myArray[1] = "Chocolite";
-        console.log(myArray.length);
-        var newArray = ["firstelement", "secondelement"];
-        newArray.push("thirdElement");
-        newArray.splice(1, 1);
-        alert(newArray);
+        const colors = ["Red",
+    "Blue",
+    "Green",
+    "Yellow",
+    "Orange",
+    "Purple",
+    "Pink",
+    "Brown",
+    "Black",
+    "White",
+    "Gray",
+    "Cyan",
+    "Magenta",
+    "AliceBlue",
+    "AntiqueWhite",
+    "Aqua",
+    "Aquamarine",
+    "Azure",
+    "Beige",
+    ];
+    
+        let d = new Date();
+        let last_reaction_time = 0;
+        let best_reaction_time = 0;
+        let time = d.toLocaleTimeString();
+        
+        let shape = document.getElementById("shapeDiv");
+        
+        shape.style.position = "relative"
+        const shape_radius = ["0%" , "5%", "50%"];
+        
+        
+        
+        shape.style.width = Math.floor((Math.random() * 180) + 20) + "px";
+        shape.style.height = Math.floor((Math.random() * 180) + 20) + "px";
+        shape.style.top = Math.floor((Math.random() * 500)) + "px";
+        shape.style.left = Math.floor((Math.random() * 800)) + "px";
+        shape.style.borderRadius = shape_radius[Math.floor(Math.random() * shape_radius.length)];
+        shape.style.backgroundColor= colors[Math.floor(Math.random() * colors.length)];
+
+        // let next_guess = true;
+        // while (next_guess) {
+            
+
+        // }
+        
+        
+        
+        
 
     </script>
     
