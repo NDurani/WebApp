@@ -1,0 +1,2 @@
+document.getElementById('btn').onclick =() => document.getElementById('para').innerHTML = document.getElementById('userInput').value;
+        
