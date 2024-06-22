@@ -47,6 +47,8 @@
         const shape_radius = ["0%" , "5%", "50%"];
         
         
+        function generateNewShape() {
+            
         
         shape.style.width = Math.floor((Math.random() * 180) + 20) + "px";
         shape.style.height = Math.floor((Math.random() * 180) + 20) + "px";
@@ -54,7 +56,7 @@
         shape.style.left = Math.floor((Math.random() * 800)) + "px";
         shape.style.borderRadius = shape_radius[Math.floor(Math.random() * shape_radius.length)];
         shape.style.backgroundColor= colors[Math.floor(Math.random() * colors.length)];
-
+        }
         // let next_guess = true;
         // while (next_guess) {
             
