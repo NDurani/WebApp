@@ -1,101 +1,147 @@
-document.getElementById('btn').onclick =() => document.getElementById('para').innerHTML = document.getElementById('userInput').value;
-        
+document.getElementById("btn").onclick = () =>
+  (document.getElementById("para").innerHTML =
+    document.getElementById("userInput").value);
+
 //Arrays:
 //----------------------------
 
-
 var myArray = new Array();
-        myArray[0] = "Pizza";
-        myArray[1] = "Chocolite";
-        console.log(myArray.length);
-        var newArray = ["firstelement", "secondelement"];
-        newArray.push("thirdElement");
-        newArray.splice(1, 1, "Habibi come to dubai", "go back home");
+myArray[0] = "Pizza";
+myArray[1] = "Chocolite";
+console.log(myArray.length);
+var newArray = ["firstelement", "secondelement"];
+newArray.push("thirdElement");
+newArray.splice(1, 1, "Habibi come to dubai", "go back home");
 alert(newArray);
-        
+
 //magic_word:
 
 document.getElementById("check").onclick = function () {
-    var magik_word = "habibi";
-    if (document.getElementById('mgkWrd').value == magik_word) {
-        alert("Great job you got it");
-
-    } else {
-        alert("Oops wrong guess!!!");
-    }
-}
+  var magik_word = "habibi";
+  if (document.getElementById("mgkWrd").value == magik_word) {
+    alert("Great job you got it");
+  } else {
+    alert("Oops wrong guess!!!");
+  }
+};
 
 //guess fingers:
 document.getElementById("check").onclick = function () {
-    var user_guess = document.getElementById("guessed_num").value
-    var rand_num = Math.floor((Math.random() * 6));
-    if (rand_num == user_guess) {
-        alert("wow you got it");
-
-    } else {
-        alert("Oops wrong guess")
-    }
-}
+  var user_guess = document.getElementById("guessed_num").value;
+  var rand_num = Math.floor(Math.random() * 6);
+  if (rand_num == user_guess) {
+    alert("wow you got it");
+  } else {
+    alert("Oops wrong guess");
+  }
+};
 
 // feeding div with tweets
-var tweets =["habibi", "mohsen", "ahmad", "Sam"];
-        for (let i = 0; i < tweets.length; i++) {
-            document.getElementById("tweets").innerHTML += tweets[i] + "<br>";
-            
+var tweets = ["habibi", "mohsen", "ahmad", "Sam"];
+for (let i = 0; i < tweets.length; i++) {
+  document.getElementById("tweets").innerHTML += tweets[i] + "<br>";
 }
-        
+
 //shape related code:
 
-        const colors = ["Red",
-    "Blue",
-    "Green",
-    "Yellow",
-    "Orange",
-    "Purple",
-    "Pink",
-    "Brown",
-    "Black",
-    "White",
-    "Gray",
-    "Cyan",
-    "Magenta",
-    "AliceBlue",
-    "AntiqueWhite",
-    "Aqua",
-    "Aquamarine",
-    "Azure",
-    "Beige",
-    ];
-    
-        let d = new Date();
-        let last_reaction_time = 0;
-        let best_reaction_time = 0;
-        let time = d.toLocaleTimeString();
-        
-        let shape = document.getElementById("shapeDiv");
-        
-        shape.style.position = "relative"
-        const shape_radius = ["0%" , "5%", "50%"];
-        
-        
-        function generateNewShape() {
-            
-        
-        shape.style.width = Math.floor((Math.random() * 180) + 20) + "px";
-        shape.style.height = Math.floor((Math.random() * 180) + 20) + "px";
-        shape.style.top = Math.floor((Math.random() * 500)) + "px";
-        shape.style.left = Math.floor((Math.random() * 800)) + "px";
-        shape.style.borderRadius = shape_radius[Math.floor(Math.random() * shape_radius.length)];
-        shape.style.backgroundColor= colors[Math.floor(Math.random() * colors.length)];
-        }
-        // let next_guess = true;
-        // while (next_guess) {
-            
+const colors = [
+  "Red",
+  "Blue",
+  "Green",
+  "Yellow",
+  "Orange",
+  "Purple",
+  "Pink",
+  "Brown",
+  "Black",
+  "White",
+  "Gray",
+  "Cyan",
+  "Magenta",
+  "AliceBlue",
+  "AntiqueWhite",
+  "Aqua",
+  "Aquamarine",
+  "Azure",
+  "Beige",
+];
 
-        // }
-        
-        
-        
-        
+let d = new Date();
+let last_reaction_time = 0;
+let best_reaction_time = 0;
+let time = d.toLocaleTimeString();
 
-    
+let shape = document.getElementById("shapeDiv");
+
+shape.style.position = "relative";
+const shape_radius = ["0%", "5%", "50%"];
+
+function generateNewShape() {
+  shape.style.width = Math.floor(Math.random() * 180 + 20) + "px";
+  shape.style.height = Math.floor(Math.random() * 180 + 20) + "px";
+  shape.style.top = Math.floor(Math.random() * 500) + "px";
+  shape.style.left = Math.floor(Math.random() * 800) + "px";
+  shape.style.borderRadius =
+    shape_radius[Math.floor(Math.random() * shape_radius.length)];
+  shape.style.backgroundColor =
+    colors[Math.floor(Math.random() * colors.length)];
+}
+// let next_guess = true;
+// while (next_guess) {
+
+// }
+
+//Promise and then:
+
+function walkDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dogWalked = true;
+      if (dogWalked) {
+        resolve("you walk the dog");
+      } else {
+        reject("you didnt walked the dog");
+      }
+    }, 1500);
+  });
+}
+
+cleanKitchen = () =>
+  new Promise((resolve, reject) =>
+    setTimeout(() => {
+      const kitchencleaned = true;
+      if (kitchencleaned) {
+        resolve("you clean the kitchen");
+      } else {
+        reject("you didnt cleaned the kitchen");
+      }
+    }, 2500)
+  );
+
+function takeOutTheTrush() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const trushTakedOut = true;
+      if (trushTakedOut) {
+        resolve("you takeout the trush ");
+      } else {
+        reject("you didnt takedout the trush");
+      }
+    }, 500);
+  });
+}
+
+walkDog()
+  .then((value) => {
+    console.log(value);
+    return cleanKitchen();
+  })
+  .then((value) => {
+    console.log(value);
+    return takeOutTheTrush();
+  })
+  .then((value) => {
+    console.log(value);
+    console.log("you finished all the chores");
+  })
+  .catch((error) => console.error(error));
